@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Employers extends Model
+class Employer extends Model
 {
     /** @use HasFactory<\Database\Factories\EmployersFactory> */
     use HasFactory;

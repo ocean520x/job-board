@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Employers;
+use App\Models\Employer;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -22,7 +22,7 @@ return new class extends Migration
         });
 
         Schema::table('jobs', function (Blueprint $table) {
-            $table->foreignIdFor(Employers::class)->constrained();
+            $table->foreignIdFor(Employer::class)->constrained();
         });
     }
 
@@ -32,7 +32,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('jobs', function (Blueprint $table) {
-            $table->dropForeignIdFor(Employers::class);
+            $table->dropForeign(['employer_id']);
+            $table->dropColumn('employer_id');
         });
 
         Schema::dropIfExists('employers');
