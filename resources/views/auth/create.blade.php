@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <x-button class="w-full bg-green50">Login</x-button>
+      <x-button class="w-full bg-green-50">Login</x-button>
     </form>
   </x-card>
 </x-layout>
