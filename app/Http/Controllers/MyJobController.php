@@ -20,6 +20,7 @@ class MyJobController extends Controller
                 'jobs' => auth()->user()->employer
                     ->jobs()
                     ->with(['employer', 'jobApplications', 'jobApplications.user'])
+                    ->withTrashed()
                     ->get()
             ]
         );
@@ -76,5 +77,15 @@ class MyJobController extends Controller
 
         return redirect()->route('my-jobs.index')
             ->with('success', 'Job deleted.');
+    }
+
+    public function restore(Job $myJob)
+    {
+        $this->authorize('restore', $myJob);
+
+        $myJob->restore();
+
+        return redirect()->route('my-jobs.index')
+            ->with('success', 'Job restored.');
     }
 }
