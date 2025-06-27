@@ -1,5 +1,5 @@
 <x-layout>
-    <x-breadcrumbs class="mb-4" :links="[
+    <x-bread-crumbs class="mb-4" :links="[
         'Jobs' => route('jobs.index'),
         $job->title => route('jobs.show', $job),
         'Apply' => '#',

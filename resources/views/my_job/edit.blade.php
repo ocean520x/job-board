@@ -1,5 +1,5 @@
 <x-layout>
-    <x-breadcrumbs :links="['My Jobs' => route('my-jobs.index'), 'Edit Job' => '#']" class="mb-4" />
+    <x-bread-crumbs :links="['My Jobs' => route('my-jobs.index'), 'Edit Job' => '#']" class="mb-4" />
 
     <x-card class="mb-8">
         <form action="{{ route('my-jobs.update', $job) }}" method="POST">
